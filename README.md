@@ -3,6 +3,27 @@
 Repositorio para el backend de la aplicación SoftGAC
 para la empresa Genios Aprende Jugando
 
+# Instalación
+
+** Requerimientos iniciales **
+
+- Python 3
+- MySQL
+- pipenv
+- make
+
+** Dependencias **
+
+Ejecute el siguiente comando para crear el ambiente virtual:
+
+    pipenv shell
+
+Luego instalar las dependencias usando:
+
+    make setup
+
+# Conexión con MySQL
+
 Para configurar la conexión a la base de datos local a través de MySQL
 debe usar variables de entorno para autenticarse con usuario y contraseña
 
