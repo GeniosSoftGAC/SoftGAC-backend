@@ -5,14 +5,14 @@ para la empresa Genios Aprende Jugando
 
 # Instalación
 
-** Requerimientos iniciales **
+**Requerimientos iniciales**
 
 - Python 3
 - MySQL
 - pipenv
 - make
 
-** Dependencias **
+**Dependencias**
 
 Ejecute el siguiente comando para crear el ambiente virtual:
 
