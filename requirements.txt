@@ -1,0 +1,18 @@
+# Django Web Framework
+django==3.2.9
+
+# Django Cors Headers - Used to enable CORS headers in API responses, and allow requests to be made to your API server from other origins.
+django-cors-headers==3.10.0
+
+# Django Rest Framework - Used to design API logic
+djangorestframework==3.12.4
+
+# MySQL Client - Used as an interface to connect Django application to the MySQL server.
+# mysqlclient==2.0.1
+PyMySQL==1.0.2
+
+# Cryptography
+cryptography==35.0.0
+
+# Environment Variables
+django-environ==0.8.1
