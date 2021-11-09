@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "shamanu4.django-intellisense",
+    "thebarkman.vscode-djaneiro",
+    "irongeek.vscode-env",
+    "waderyan.gitblame",
+    "eamodio.gitlens",
+    "yzhang.markdown-all-in-one",
+    "shd101wyy.markdown-preview-enhanced",
+    "mervin.markdown-formatter",
+    "christian-kohler.path-intellisense",
+    "njpwerner.autodocstring",
+    "donjayamanne.python-environment-manager",
+    "kevinrose.vsc-python-indent"
+  ]
+}
