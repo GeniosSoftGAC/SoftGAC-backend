@@ -65,5 +65,10 @@ reemplace los valores según correspondan
     python manage.py runserver
 ```
 
+_Este es un trabajo en proceso de desarrollo._
+
+Nota para desarrollo:
+
+Cada que se cree un nuevo módulo con un nuevo modelo, se debe eliminar la base de datos (crear backup), y volver a hacer las migraciones generales y por modulos.
 
 
