@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.mixins import UpdateModelMixin, DestroyModelMixin
 
+## Importar el modelo y el serializer creado
 from .models import Product
 from .serializers import ProductSerializer
 
@@ -18,8 +19,8 @@ class ProductListView(
     # Si se pasa el id en la solicitud GET, se devuelve un item 
     # de productos identificado por tal id
       try:
-        # quiere actualizar existe 
         # Revisa si el item de producto que el usuario 
+        # quiere actualizar existe 
         queryset = Product.objects.get(id=id)
       except Product.DoesNotExist:
         # Si el item de no existe, retorna un mensaje de error
@@ -31,7 +32,7 @@ class ProductListView(
 
     else:
       # Solicitamos todos los items de producto a 
-      # la base de datos usand Django's model ORM
+      # la base de datos usando Django's model ORM
       queryset = Product.objects.all()
 
       read_serializer = ProductSerializer(

@@ -6,6 +6,8 @@ from .models import Product
 # Creamos la clase para serializar el modelo 
 
 class ProductSerializer(serializers.ModelSerializer):
+
+  # Se crea una variable por cada campo asignandole el respectivo serializer
   nombre = serializers.CharField(max_length=20,required=True)
   precio = serializers.IntegerField(required=True)
   descripcion = serializers.CharField(max_length=1000)
@@ -55,6 +57,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
     return instance
 
+# En la clase Meta definimos el nombre del modelo y sus campos en una listas
   class Meta:
     model = Product
     fields = [ 
