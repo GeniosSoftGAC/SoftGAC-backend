@@ -1,3 +1,6 @@
+env:
+	pipenv shell
+
 setup:
 	pip install -r requirements.txt
 
