@@ -63,16 +63,16 @@ class UserSignUpSerializer(serializers.Serializer):
         validators=[UniqueValidator(queryset=User.objects.all())]
     )
 
-    photo = serializers.ImageField(
-        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])], 
-        required=False
-    )
+    # photo = serializers.ImageField(
+    #     validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])], 
+    #     required=False
+    # )
 
-    extract = serializers.CharField(max_length=1000, required=False)
+    # extract = serializers.CharField(max_length=1000, required=False)
 
-    city = serializers.CharField(max_length=250, required=False)
+    # city = serializers.CharField(max_length=250, required=False)
 
-    country = serializers.CharField(max_length=250, required=False)
+    # country = serializers.CharField(max_length=250, required=False)
 
     phone_regex = RegexValidator(
         regex=r'\+?1?\d{9,15}$',
@@ -94,13 +94,13 @@ class UserSignUpSerializer(serializers.Serializer):
             raise serializers.ValidationError("Las contraseñas no coinciden")
         password_validation.validate_password(passwd)
 
-        image = None
-        if 'photo' in data:
-            image = data['photo']
+        # image = None
+        # if 'photo' in data:
+        #     image = data['photo']
 
-        if image:
-            if image.size > (512 * 1024):
-                raise serializers.ValidationError(f"La imagen es demasiado grande, el peso máximo permitido es de 512KB y el tamaño enviado es de {round(image.size / 1024)}KB")
+        # if image:
+        #     if image.size > (512 * 1024):
+        #         raise serializers.ValidationError(f"La imagen es demasiado grande, el peso máximo permitido es de 512KB y el tamaño enviado es de {round(image.size / 1024)}KB")
 
         return data
 
