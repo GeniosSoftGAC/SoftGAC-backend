@@ -16,3 +16,5 @@ cryptography==35.0.0
 
 # Environment Variables
 django-environ==0.8.1
+
+django-ckeditor==6.2.0
