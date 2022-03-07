@@ -7,3 +7,8 @@ SoftGAC/SoftGAC/__pycache__/
 .env
 
 Pipfile
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

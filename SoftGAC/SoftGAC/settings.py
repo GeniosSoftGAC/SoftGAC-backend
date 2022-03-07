@@ -146,7 +146,10 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:8081',
     'http://localhost:8000',
 )
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'SoftGAC-backend-dev.sa-east-1.elasticbeanstalk.com',
+    '*'
+]
 
 # Django REST Framework
 REST_FRAMEWORK = {
