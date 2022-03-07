@@ -147,7 +147,7 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:8000',
 )
 ALLOWED_HOSTS = [
-    'SoftGAC-backend-dev.sa-east-1.elasticbeanstalk.com',
+    '15.228.98.69',
     '*'
 ]
 
