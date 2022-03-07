@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'corsheaders',
     'users.apps.UsersConfig',
-    'products.apps.ProductsConfig' 
+    'products.apps.ProductsConfig',
+    'ordenes.apps.OrdenesConfig'
 
 
 ]
