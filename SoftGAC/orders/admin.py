@@ -1,15 +1,7 @@
 from django.contrib import admin
-from.models import products
-from.models import custumers
 
+from .models import Order, OrderItem
 
-@admin.register(Order)
-class OrdersAdmin(admin.ModelAdmin):
-  list_display: order[
-    'nOrden', 
-    'descripcion',
-    'total'  
-  ]
-
+admin.site.register(Order)
 
 

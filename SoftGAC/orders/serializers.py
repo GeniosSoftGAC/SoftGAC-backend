@@ -1,22 +1,70 @@
 from rest_framework import serializers
-from .models import Orders
-from tkinter import CASCADE
-from .models import customers
-from .models import products
+from .models import Order, OrderItem
+from products.serializers import ProductSerializer
 
-class ProductSerializer(serializers.ModelSerializer):
-    id = serializers.AutoField(primary_key=True)
-    nOrden = serializers.Random(max_length=4)
-    descripcion = serializers.CharField(max_length=1000)
-    total= serializers.IntegerField
-    cliente = serializers.ForeignKey(customers, on_delete=CASCADE)
-    productos = serializers.ForeignKey(products, on_delete=CASCADE)
+class MyOrderItemSerializer(serializers.ModelSerializer):    
+    product = ProductSerializer()
+
+    class Meta:
+        model = OrderItem
+        fields = (
+            "price",
+            "product",
+            "quantity",
+        )
+
+class MyOrderSerializer(serializers.ModelSerializer):
+    items = MyOrderItemSerializer(many=True)
+
+    class Meta:
+        model = Order
+        fields = (
+            "id",
+            "primer_nombre",
+            "apellido",
+            "email",
+            "direccion",
+            "ciudad",
+            "telefono",
+            "numero_orden",
+            "fecha_creacion",
+            "descripcion",
+            "total"
+        )
+
+class OrderItemSerializer(serializers.ModelSerializer):    
+    class Meta:
+        model = OrderItem
+        fields = (
+            "price",
+            "product",
+            "quantity",
+        )
+
+class OrderSerializer(serializers.ModelSerializer):
+    items = OrderItemSerializer(many=True)
+
+    class Meta:
+        model = Order
+        fields = (
+            "id",
+            "primer_nombre",
+            "apellido",
+            "email",
+            "direccion",
+            "ciudad",
+            "telefono",
+            "numero_orden",
+            "fecha_creacion",
+            "descripcion",
+            "total"
+        )
     
     def create(self, validated_data):
-        return super().create(
-            nOrden =  validated_data.get('nOrden'),
-            descripcion = validated_data.get('descripcion'),
-            total = validated_data.get('total'),
-            cliente = validated_data.get('cliente'),
-            productos = validated_data.get('productos')          
-            )
+        items_data = validated_data.pop('items')
+        order = Order.objects.create(**validated_data)
+
+        for item_data in items_data:
+            OrderItem.objects.create(order=order, **item_data)
+            
+        return order
