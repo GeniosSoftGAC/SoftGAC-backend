@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ordenes.apps.OrdenesConfig'
 
 
+    'products.apps.ProductsConfig' 
 ]
 
 MIDDLEWARE = [
@@ -86,7 +87,7 @@ DATABASES = {
         'NAME': 'softgac',
         'USER': env('DATABASE_USER') or 'root',
         'PASSWORD': env('DATABASE_PASS') or '',
-        'HOST': '127.0.0.1',
+        'HOST': env('DATABASE_ENDPOINT') or '127.0.0.1',
         'PORT': env('DATABASE_PORT') or '3306'
     }
 }
