@@ -3,12 +3,14 @@ from django.conf import settings
 from django.http import Http404
 from django.shortcuts import render
 
+import logging 
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
 
-from .models import Order, OrderItem
+from .models import Order #, OrderItem
 from .serializers import OrderSerializer, MyOrderSerializer
 
 @api_view(['POST'])
@@ -28,7 +30,23 @@ def checkout(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class OrdersList(APIView):
-    def get(self, request, format=None):
-        orders = Order.objects.filter(user=request.user)
-        serializer = MyOrderSerializer(orders, many=True)
+     def get(self, request, id, format=None):
+        logging.debug('SOLICITUD', request.headers['User-Agent'])
+        orders = Order.objects.get(id=id)  
+        serializer = MyOrderSerializer(orders)
+        # dataset = self.request.user.username
         return Response(serializer.data)
+    # def get(self, request, id=None):
+    #     print(request)
+    #     if id:
+    #         try:
+    #             queryset = Order.objects.get(id=id)
+    #         except:
+    #             return Response({'errors': 'La orden no existe'}, status=400)
+
+    #         read_serializer = OrderSerializer(queryset)
+    #     else:
+    #         queryset = Order.objects.all()
+    #         read_serializer = OrderSerializer(queryset, many=True)
+
+    #     return Response(read_serializer.data)

@@ -26,12 +26,12 @@ class MyOrderSerializer(serializers.ModelSerializer):
             "direccion",
             "ciudad",
             "telefono",
-            "numero_orden",
+            # "numero_orden",
             "fecha_creacion",
             "descripcion",
+            "items",
             "total"
         )
-
 class OrderItemSerializer(serializers.ModelSerializer):    
     class Meta:
         model = OrderItem
@@ -54,9 +54,10 @@ class OrderSerializer(serializers.ModelSerializer):
             "direccion",
             "ciudad",
             "telefono",
-            "numero_orden",
+            # "numero_orden",
             "fecha_creacion",
             "descripcion",
+            "items",
             "total"
         )
     
