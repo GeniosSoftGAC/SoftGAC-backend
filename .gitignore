@@ -5,6 +5,8 @@ SoftGAC/products/__pycache__/
 SoftGAC/users/__pycache__/
 SoftGAC/orders/__pycache__/
 SoftGAC/SoftGAC/__pycache__/
+venv
+
 
 .env
 

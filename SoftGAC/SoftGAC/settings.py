@@ -22,7 +22,9 @@ SECRET_KEY = 'django-insecure-1=-*hn&a&e26nzz)3^o5fand#6=uva2e1$z8x6b8u91t(nlxqf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'SoftGAC-backend-dev.sa-east-1.elasticbeanstalk.com',
+]
 
 
 # Application definition
@@ -40,7 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'users.apps.UsersConfig',
     'orders.apps.OrdersConfig',
-    'products.apps.ProductsConfig' 
+    'products.apps.ProductsConfig'
 ]
 
 MIDDLEWARE = [
