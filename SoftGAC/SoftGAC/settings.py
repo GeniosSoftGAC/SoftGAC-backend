@@ -1,5 +1,10 @@
 import environ
+import django_on_heroku
+
 from pathlib import Path
+
+
+django_on_heroku.settings(locals())
 
 
 # Initialise environment variables
