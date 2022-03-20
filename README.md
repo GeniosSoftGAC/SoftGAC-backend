@@ -10,7 +10,7 @@ para la empresa Genios Aprende Jugando
 - Python 3
 - MySQL
 - pipenv
-- make
+- makes
 
 **Dependencias**
 
