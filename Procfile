@@ -1,1 +1,1 @@
-web: cd ./SoftGAC gunicorn SoftGAC.wsgi
+web: cd /SoftGAC gunicorn SoftGAC.wsgi
