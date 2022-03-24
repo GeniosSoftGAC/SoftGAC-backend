@@ -2,8 +2,8 @@ import environ
 import os
 from pathlib import Path
 
+from pathlib import Path
 
-# Initialise environment variables
 
 env = environ.Env()
 
@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-1=-*hn&a&e26nzz)3^o5fand#6=uva2e1$z8x6b8u91t(nlxqf
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'SoftGAC-backend-dev.sa-east-1.elasticbeanstalk.com',
+    '*'
 ]
 
 
