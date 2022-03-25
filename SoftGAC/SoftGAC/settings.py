@@ -81,28 +81,16 @@ WSGI_APPLICATION = 'SoftGAC.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'softgac',
+        'USER': env('DATABASE_USER') or 'root',
+        'PASSWORD': env('DATABASE_PASS') or '',
+        'HOST': env('DATABASE_ENDPOINT') or '127.0.0.1',
+        'PORT': env('DATABASE_PORT') or '3306'
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'softgac',
-            'USER': env('DATABASE_USER') or 'root',
-            'PASSWORD': env('DATABASE_PASS') or '',
-            'HOST': env('DATABASE_ENDPOINT') or '127.0.0.1',
-            'PORT': env('DATABASE_PORT') or '3306'
-        }
-    }
+}
 
 
 # Password validation
@@ -163,7 +151,6 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:8000',
 )
 ALLOWED_HOSTS = [
-    '15.228.98.69',
     '*'
 ]
 
