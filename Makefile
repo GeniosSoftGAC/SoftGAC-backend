@@ -7,6 +7,13 @@ setup:
 server:
 	cd SoftGAC && python manage.py runserver
 
+gunicorn-test:
+	
+	cd SoftGAC && gunicorn SoftGAC.wsgi:application --bind localhost:8000
+
+serve-public:
+	cd SoftGAC && python manage.py runserver 0.0.0.0:8000
+
 migrations:
 	cd SoftGAC && python manage.py makemigrations
 
